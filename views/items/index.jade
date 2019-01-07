@@ -6,6 +6,8 @@ block content
   ul
     each val, index in items
       <li style="color: !{val.color}">
+      if val.image_file_name
+        img(src="/uploads/#{val.image_file_name}", width="300")
       span= `${val.name} - ${val.description} [${val.price} credits]`
       if user && user.id != val.owner.id
         form(action="/items/#{val.id}", method="POST", style="display: inline")
