@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+
+  body
+    a(href="/items") Items
+    if user
+      a(href="/sessions/logout") Logout
+      a(href="/items/new") Publish New Item
+    else
+      a(href="/sessions/new") Login
+      a(href="/registrations/new") Sign Up
+
+    if user
+      p Welcome #{user.email}, You have #{user.credits} credits left
+
+    block content

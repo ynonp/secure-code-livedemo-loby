@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+  h1 items/index
+
+  ul
+    each val, index in items
+      <li style="color: !{val.color}">
+      span= `${val.name} - ${val.description} [${val.price} credits]`
+      if user && user.id != val.owner.id
+        form(action="/items/#{val.id}", method="POST", style="display: inline")
+          input(type="submit", value="Buy")
+      </li>
+
+
+

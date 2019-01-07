@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+  h1 sessions/new
+
+  form(action="/sessions", method="POST")
+    div.field
+      label Email
+        input(type="email", name="email")
+
+    div.field
+      label Password
+        input(type="password", name="password")
+
+    div.field
+      input(type="submit" value="Login")
+
+

@@ -1,0 +1,25 @@
+extends ../layout
+
+block content
+  form(action="/items", methods="POST")
+    div.field
+      label name
+        input(type="text", name="name")
+
+    div.field
+      label description
+        input(type="text", name="description")
+
+    div.field
+      label color
+        input(type="color", name="color")
+
+    div.field
+      label price
+        input(type="number", name="price")
+
+    div.field
+      input(type="submit", value="Publish")
+
+
+
